@@ -10,8 +10,9 @@ import "fmt"
 
 func main() {
 	myAge := 18
+	disablilty := true
 
-	if myAge >= 18 {
+	if myAge >= 18 && !disablilty {
 		fmt.Println("I am eligible to give vote")
 	} else {
 		fmt.Println("I am not eligible to give vote")
