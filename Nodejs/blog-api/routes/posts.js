@@ -16,9 +16,13 @@ router.get("/:id", async (req, res) => {
 
 // Create a post
 router.post("/", async (req, res) => {
-  const post = new Post(req.body);
-  await post.save();
-  res.status(201).json(post);
+  try {
+    const post = new Post(req.body);
+    await post.save();
+    res.status(201).json(post);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
 });
 
 // Update a post
